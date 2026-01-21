@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IHAO – Training Guides</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0066cc">
+
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px 10px;
+      position: relative;
+    }
+
+    .lang-toggle {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-size: 14px;
+    }
+
+    .lang-toggle button {
+      background: none;
+      border: 1px solid #ccc;
+      padding: 4px 10px;
+      margin: 0 2px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 22px 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .cover {
+      width: 120px;
+      margin: 0 auto 15px;
+      display: block;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 18px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 11px 14px;
+      background: #0066cc;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .qr {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .qr img {
+      width: 150px;
+      height: 150px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      padding: 20px;
+    }
+
+    .en { display: none; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="lang-toggle">
+    <button onclick="setLang('ar')">AR</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+
+  <h1 class="ar">الأدلة الإرشادية التدريبية</h1>
+  <h1 class="en">Training Guidance Manuals</h1>
+
+  <p class="ar">منظمة IHAO</p>
+  <p class="en">IHAO Organization</p>
+</header>
+
+<main class="container">
+
+  <!-- Photoshop -->
+  <div class="card">
+    <img src="photoshop.png" class="cover" alt="Photoshop">
+
+    <h2 class="ar">
+      GDE 1-2<br>
+      التصميم الجرافيكي باستخدام Photoshop
+    </h2>
+
+    <h2 class="en">
+      GDE 1-2<br>
+      Graphic Design Using Photoshop
+    </h2>
+
+    <a href="gde_photoshop_ar.pdf" target="_blank" class="ar">
+      فتح الدليل التدريبي (PDF)
+    </a>
+
+    <a href="gde_photoshop_ar.pdf" target="_blank" class="en">
+      Open Training Manual (PDF)
+    </a>
+
+    <div class="qr">
+      <img src="Photoshop_qr_code.png" alt="QR Photoshop">
+    </div>
+  </div>
+
+  <!-- CorelDRAW -->
+  <div class="card">
+    <img src="coreldraw.png" class="cover" alt="CorelDRAW">
+
+    <h2 class="ar">
+      GDE 1-1<br>
+      التصميم الجرافيكي باستخدام CorelDRAW
+    </h2>
+
+    <h2 class="en">
+      GDE 1-1<br>
+      Graphic Design Using CorelDRAW
+    </h2>
+
+    <a href="gde_coreldraw_ar.pdf" target="_blank" class="ar">
+      فتح الدليل التدريبي (PDF)
+    </a>
+
+    <a href="gde_coreldraw_ar.pdf" target="_blank" class="en">
+      Open Training Manual (PDF)
+    </a>
+
+    <div class="qr">
+      <img src="CorelDraw_qr_code.png" alt="QR CorelDRAW">
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © IHAO – Training Manuals
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('.ar').forEach(el => el.style.display = (lang === 'ar') ? 'block' : 'none');
+    document.querySelectorAll('.en').forEach(el => el.style.display = (lang === 'en') ? 'block' : 'none');
+  }
+</script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
+  }
+</script>
+
+</body>
+</html>
